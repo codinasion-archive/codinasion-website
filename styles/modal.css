@@ -1,0 +1,10 @@
+/* doc search modal */
+.DocSearch-Modal {
+  background: var(--docsearch-modal-background);
+  border-radius: 6px;
+  box-shadow: var(--docsearch-modal-shadow);
+  flex-direction: column;
+  margin: 70px auto auto !important;
+  max-width: var(--docsearch-modal-width);
+  position: relative;
+}
