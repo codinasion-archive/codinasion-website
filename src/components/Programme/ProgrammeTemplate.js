@@ -17,7 +17,10 @@ function ProgrammeTemplate({ programmeData, githubEditLink, children }) {
   const { slug, title, markdown } = programmeData;
   return (
     <>
-      <Seo programmeData={programmeData} />
+      <Seo
+        title={programmeData.title}
+        description={programmeData.description}
+      />
 
       <Container maxWidth="md">
         <Breadcrump

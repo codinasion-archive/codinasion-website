@@ -1,8 +1,6 @@
 import Head from "next/head";
 
-export default function Seo({ programmeData }) {
-  const { title, description } = programmeData;
-
+export default function Seo({ title, description }) {
   return (
     <>
       <Head>

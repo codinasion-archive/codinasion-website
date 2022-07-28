@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useRouter } from "next/router";
-import Head from "next/head";
 
 import {
   Container,
@@ -30,6 +29,7 @@ import MdxComponent from "@/components/MdxComponent";
 import Tag from "@/components/Tag";
 import Image from "next/image";
 import Comment from "@/components/Comment";
+import Seo from "@/components/Seo";
 
 export default function DsaId({ dsaData, githubEditLink }) {
   const router = useRouter();
@@ -55,35 +55,7 @@ export default function DsaId({ dsaData, githubEditLink }) {
 
     return (
       <>
-        <Head>
-          <title key="title">{`${title}`}</title>
-          <meta
-            key="description"
-            name="description"
-            content={`${description}`}
-          />
-
-          {/* twitter card meta tags */}
-          <meta key="twitter-title" name="twitter:title" content={`${title}`} />
-          <meta
-            key="twitter-description"
-            name="twitter:description"
-            content={`${description}`}
-          />
-
-          {/* og card meta tags */}
-          <meta key="og-title" property="og:title" content={`${title}`} />
-          <meta
-            key="og-description"
-            property="og:description"
-            content={`${description}`}
-          />
-          <meta
-            key="og-image-alt"
-            property="og:image:alt"
-            content={`${title}`}
-          />
-        </Head>
+        <Seo title={title} description={description} />
 
         <Container maxWidth="md">
           <Box sx={{ mt: 5 }}>

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://codinasion.vercel.app</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/dsa</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/python</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/c</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/java</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/cpp</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/cs</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/go</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
-<url><loc>https://codinasion.vercel.app/programme/tags/js</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-06-06T04:19:16.686Z</lastmod></url>
+<url><loc>https://codinasion.vercel.app</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog/tags</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/dsa</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog/tags/sitemap</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog/tags/django</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog/tags/ubuntu</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/java</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/cs</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/c</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/cpp</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/go</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/julia</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/js</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/python</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/php</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/programme/tags/rust</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog/merge-two-sitemaps</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codinasion.vercel.app/blog/django-setup-in-ubuntu-for-begineers</loc><lastmod>2022-07-28T15:34:55.846Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

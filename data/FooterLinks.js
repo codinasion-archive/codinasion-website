@@ -11,6 +11,10 @@ const FooterLinks = [
         text: "DSA",
         url: "/dsa",
       },
+      {
+        text: "Blog",
+        url: "/blog",
+      },
     ],
   },
   {

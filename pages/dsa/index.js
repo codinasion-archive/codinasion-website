@@ -1,31 +1,14 @@
 import React from "react";
 
-import Head from "next/head";
-import { useRouter } from "next/router";
-
-import {
-  Container,
-  Typography,
-  Box,
-  useTheme,
-  useMediaQuery,
-  List,
-  Divider,
-  Pagination,
-} from "@mui/material";
+import { Container, Typography, Box, Divider, Pagination } from "@mui/material";
 
 import Grid from "@mui/material/Grid";
 
 import DSAPost from "@/components/Dsa/DSAPost";
 
-import siteMetadata from "@/data/siteMetadata";
+import Seo from "@/components/Seo";
 
 export default function Dsa({ allDsaData }) {
-  const router = useRouter();
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   const [maxCount] = React.useState(15);
   const [page, setPage] = React.useState(1);
   const indexOfLast = page * maxCount;
@@ -34,9 +17,7 @@ export default function Dsa({ allDsaData }) {
 
   const handlePaginationChange = (event, value) => {
     setPage(value);
-    // router.push(`/dsa?page=${value}`, null, {
-    //   shallow: true,
-    // });
+
     window &&
       window.scroll({
         top: 0,
@@ -45,46 +26,13 @@ export default function Dsa({ allDsaData }) {
       });
   };
 
-  // React.useEffect(() => {
-  //   if (router.query.page) {
-  //     setPage(parseInt(router.query.page));
-  //   }
-  // }, [router.query.page]);
   return (
     <>
-      <Head>
-        <title key="title">{`Data Structures and Algorithm - DSA`}</title>
-        <meta
-          key="description"
-          name="description"
-          content={`List of Data Structures and Algorithm Programmes`}
-        />
+      <Seo
+        title="Data Structures and Algorithm - DSA"
+        description="List of Data Structures and Algorithm Programmes"
+      />
 
-        {/* twitter card meta tags */}
-        <meta
-          key="twitter-title"
-          name="twitter:title"
-          content={`Data Structures and Algorithm - DSA`}
-        />
-        <meta
-          key="twitter-description"
-          name="twitter:description"
-          content={`List of Data Structures and Algorithm Programmes`}
-        />
-
-        {/* og card meta tags */}
-        <meta
-          key="og-title"
-          property="og:title"
-          content={`Data Structures and Algorithm - DSA`}
-        />
-        <meta
-          key="og-description"
-          property="og:description"
-          content={`List of Data Structures and Algorithm Programmes`}
-        />
-        <meta key="og-image-alt" property="og:image:alt" content={`DSA`} />
-      </Head>
       <Container maxWidth="lg">
         <Box sx={{ my: 4 }}>
           <Typography variant="bold" component="h1" gutterBottom>
