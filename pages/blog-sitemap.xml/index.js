@@ -17,7 +17,7 @@ export const getServerSideProps = async (ctx) => {
 
   allDsaData.map((data) => {
     sitemapData.push({
-      loc: `${process.env.SITE_URL || SITE_URL}/dsa/${data.slug}`,
+      loc: `${process.env.SITE_URL || SITE_URL}/blog/${data.slug}`,
       lastmod: new Date().toISOString(),
       changefreq: "daily",
       priority: 0.7,
