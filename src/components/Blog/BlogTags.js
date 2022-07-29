@@ -39,7 +39,7 @@ export default function BlogTags({ allBlogTagData }) {
                         marginRight: "5px",
                       }}
                     >
-                      {tag.count <= 99 ? `${tag.count}` : `${tag.count}+`}
+                      {tag.count <= 99 ? `${tag.count}` : `99+`}
                     </Avatar>
                   }
                   size="medium"
