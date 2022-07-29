@@ -12,6 +12,10 @@ const NavbarLinks = [
     text: "DSA",
     url: "/dsa",
   },
+  {
+    text: "Blog",
+    url: "/blog",
+  },
 ];
 
 export default NavbarLinks;

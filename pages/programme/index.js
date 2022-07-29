@@ -1,27 +1,18 @@
 import React from "react";
 
-import Head from "next/head";
-import { useRouter } from "next/router";
-
 import {
   Container,
   Typography,
   Box,
-  useTheme,
-  useMediaQuery,
   List,
   Divider,
   Pagination,
 } from "@mui/material";
 
 import ProgrammePost from "@/components/Programme/ProgrammePost";
+import Seo from "@/components/Seo";
 
 export default function Programme({ allProgrammeData }) {
-  const router = useRouter();
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   const [maxCount] = React.useState(15);
   const [page, setPage] = React.useState(1);
   const indexOfLast = page * maxCount;
@@ -30,9 +21,7 @@ export default function Programme({ allProgrammeData }) {
 
   const handlePaginationChange = (event, value) => {
     setPage(value);
-    // router.push(`/programme?page=${value}`, null, {
-    //   shallow: true,
-    // });
+
     window &&
       window.scroll({
         top: 0,
@@ -41,50 +30,10 @@ export default function Programme({ allProgrammeData }) {
       });
   };
 
-  // React.useEffect(() => {
-  //   if (router.query.page) {
-  //     setPage(parseInt(router.query.page));
-  //   }
-  // }, [router.query.page]);
   return (
     <>
-      <Head>
-        <title key="title">{`Programmes`}</title>
-        <meta
-          key="description"
-          name="description"
-          content={`List of Programmes`}
-        />
+      <Seo title="Programme" description={"List of Programmes"} />
 
-        {/* twitter card meta tags */}
-        <meta
-          key="twitter-title"
-          name="twitter:title"
-          content={`Programmes - Codinasion`}
-        />
-        <meta
-          key="twitter-description"
-          name="twitter:description"
-          content={`List of Programmes - Codinasion`}
-        />
-
-        {/* og card meta tags */}
-        <meta
-          key="og-title"
-          property="og:title"
-          content={`Programmes - Codinasion`}
-        />
-        <meta
-          key="og-description"
-          property="og:description"
-          content={`List of Programmes - Codinasion`}
-        />
-        <meta
-          key="og-image-alt"
-          property="og:image:alt"
-          content={`Programmes`}
-        />
-      </Head>
       <Container maxWidth="md">
         <Box sx={{ my: 4 }}>
           <Typography variant="bold" component="h1" gutterBottom>

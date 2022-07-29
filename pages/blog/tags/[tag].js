@@ -4,22 +4,24 @@ import {
   Container,
   Typography,
   Box,
-  List,
+  Chip,
   Divider,
   Pagination,
 } from "@mui/material";
 
-import ProgrammePost from "@/components/Programme/ProgrammePost";
+import Grid from "@mui/material/Grid";
 
 import formatTag from "@/components/Tag/formatTag";
 import Seo from "@/components/Seo";
+import BlogPost from "@/components/Blog/BlogPost";
+import BlogTags from "@/components/Blog/BlogTags";
 
-export default function TagPage({ allProgramme, tag }) {
+export default function TagPage({ allBlogData, allBlogTagData, tag }) {
   const [maxCount] = React.useState(15);
   const [page, setPage] = React.useState(1);
   const indexOfLast = page * maxCount;
   const indexOfFirst = indexOfLast - maxCount;
-  const data = allProgramme.slice(indexOfFirst, indexOfLast);
+  const data = allBlogData.slice(indexOfFirst, indexOfLast);
 
   const handlePaginationChange = (event, value) => {
     setPage(value);
@@ -39,28 +41,36 @@ export default function TagPage({ allProgramme, tag }) {
         description={`List of ${formatTag(tag).label} Programmes`}
       />
 
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Box sx={{ my: 4 }}>
-          <Typography variant="bold" component="h1" gutterBottom>
-            List of {formatTag(tag).label} Programmes
+          <Typography variant="bold" component="h1" gutterBottom align="center">
+            Blog
           </Typography>
-          <Divider />
-          <List>
+          <Divider sx={{ mt: 5 }}>
+            <Chip
+              label={`${formatTag(tag).label} related Blogs`}
+              size="small"
+              color="success"
+              variant="outlined"
+            />
+          </Divider>
+
+          <Grid
+            container
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              mt: 3,
+            }}
+          >
             {data !== null &&
-              data.map((data1, index) => (
-                <ProgrammePost
-                  href="/programme"
-                  key={index}
-                  data={data1}
-                  index={index}
-                />
-              ))}
-          </List>
+              data.map((blog, index) => <BlogPost key={index} blog={blog} />)}
+          </Grid>
         </Box>
 
         <Box sx={{ my: 4 }}>
           <Pagination
-            count={Math.ceil(allProgramme.length / maxCount)}
+            count={Math.ceil(allBlogData.length / maxCount)}
             page={page}
             onChange={handlePaginationChange}
             style={{ justifyContent: "center", display: "flex" }}
@@ -68,6 +78,8 @@ export default function TagPage({ allProgramme, tag }) {
             variant="outlined"
           />
         </Box>
+
+        <BlogTags allBlogTagData={allBlogTagData} />
       </Container>
     </>
   );
@@ -75,7 +87,7 @@ export default function TagPage({ allProgramme, tag }) {
 
 export async function getStaticPaths() {
   const allTags = await fetch(
-    `https://raw.githubusercontent.com/${"codinasion"}/${"codinasion-data"}/master/data/programme/${"tagList.json"}`,
+    `https://raw.githubusercontent.com/codinasion/codinasion-data/master/data/blog/tagList.json`,
     {
       method: "GET",
       headers: {
@@ -90,7 +102,7 @@ export async function getStaticPaths() {
     allTags !== null
       ? allTags.map((item) => ({
           params: {
-            tag: `${item}`,
+            tag: `${item.tag}`,
           },
         }))
       : [];
@@ -102,10 +114,20 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allProgramme = await fetch(
-    `https://raw.githubusercontent.com/${"codinasion"}/${"codinasion-data"}/master/data/programme/tag/${
-      params.tag
-    }.json`,
+  const allBlogData = await fetch(
+    `https://raw.githubusercontent.com/codinasion/codinasion-data/master/data/blog/tag/${params.tag}.json`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
+    }
+  )
+    .then((res) => res.json())
+    .catch((error) => console.log(error));
+
+  const allBlogTagData = await fetch(
+    `https://raw.githubusercontent.com/codinasion/codinasion-data/master/data/blog/tagList.json`,
     {
       method: "GET",
       headers: {
@@ -118,7 +140,8 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      allProgramme,
+      allBlogData,
+      allBlogTagData,
       tag: params.tag,
     },
     revalidate: 60,

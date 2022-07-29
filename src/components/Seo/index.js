@@ -1,8 +1,6 @@
 import Head from "next/head";
 
-export default function Seo({ programmeData }) {
-  const { title, description } = programmeData;
-
+export default function Seo({ title, description, og_image }) {
   return (
     <>
       <Head>
@@ -16,6 +14,13 @@ export default function Seo({ programmeData }) {
           name="twitter:description"
           content={`${description}`}
         />
+        {og_image && (
+          <meta
+            key="twitter-image-src"
+            name="twitter:image:src"
+            content={og_image}
+          />
+        )}
 
         {/* og card meta tags */}
         <meta key="og-title" property="og:title" content={`${title}`} />
@@ -25,6 +30,7 @@ export default function Seo({ programmeData }) {
           content={`${description}`}
         />
         <meta key="og-image-alt" property="og:image:alt" content={`${title}`} />
+        {og_image && <meta key="og-image" property="og:image" content={og_image} />}
       </Head>
     </>
   );
