@@ -30,3 +30,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# static sitemaps data
+/public/robots.txt
+/public/sitemap*.xml
