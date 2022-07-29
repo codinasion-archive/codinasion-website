@@ -55,7 +55,7 @@ export default function DsaId({ dsaData, githubEditLink }) {
 
     return (
       <>
-        <Seo title={title} description={description} />
+        <Seo title={title} description={description} og_image={image} />
 
         <Container maxWidth="md">
           <Box sx={{ mt: 5 }}>

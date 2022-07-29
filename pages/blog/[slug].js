@@ -13,11 +13,11 @@ export default function BlogId({ blogData, githubEditLink }) {
   }
 
   if (blogData !== null) {
-    const { title, description } = blogData;
+    const { title, description, image } = blogData;
 
     return (
       <>
-        <Seo title={title} description={description} />
+        <Seo title={title} description={description} og_image={image} />
         <BlogTemplate blogData={blogData} githubEditLink={githubEditLink} />
       </>
     );
