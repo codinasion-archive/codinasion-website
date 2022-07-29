@@ -22,7 +22,9 @@ const MyImage = (props) => {
         <Image
           loader={myLoader}
           src={
-            path.startsWith("/blog/")
+            src.startsWith("http" || "https" || "/")
+              ? src
+              : path.startsWith("/blog/")
               ? `https://raw.githubusercontent.com/codinasion/codinasion-blog/master${path}/${src}`
               : `${src}`
           }
